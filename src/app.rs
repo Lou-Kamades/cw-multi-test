@@ -61,10 +61,14 @@ pub struct App<
     Gov = GovFailingModule,
     Stargate = StargateFailingModule,
 > {
-    pub(crate) router: Router<Bank, Custom, Wasm, Staking, Distr, Ibc, Gov, Stargate>,
-    pub(crate) api: Api,
-    pub(crate) storage: Storage,
-    pub(crate) block: BlockInfo,
+    /// R
+    pub router: Router<Bank, Custom, Wasm, Staking, Distr, Ibc, Gov, Stargate>,
+    /// A
+    pub api: Api,
+    /// S
+    pub storage: Storage,
+    /// B
+    pub block: BlockInfo,
 }
 
 /// No-op application initialization function.
@@ -510,7 +514,7 @@ where
 #[derive(Clone)]
 pub struct Router<Bank, Custom, Wasm, Staking, Distr, Ibc, Gov, Stargate> {
     /// Wasm module instance to be used in this [Router].
-    pub(crate) wasm: Wasm,
+    pub wasm: Wasm,
     /// Bank module instance to be used in this [Router].
     pub bank: Bank,
     /// Custom module instance to be used in this [Router].
